@@ -8,7 +8,7 @@ import base64
 from io import BytesIO
 from PIL import Image
 
-debug = True
+debug = False
 scroll_interval = 1
 
 base_url = 'https://kids-km3.shogakukan.co.jp'
