@@ -8,7 +8,7 @@ import base64
 from io import BytesIO
 from PIL import Image
 
-debug = True # Set True to launch visible browser
+debug = False # Set True to launch visible browser
 scroll_interval = 1 # Interval to fetch each page image
 download_books_from = 1 # 何巻からDLするか
 
