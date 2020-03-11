@@ -8,8 +8,9 @@ import base64
 from io import BytesIO
 from PIL import Image
 
-debug = False
-scroll_interval = 1
+debug = False # Set True to launch visible browser
+scroll_interval = 1 # Interval to fetch each page image
+download_books_from = 1 # 何巻からDLするか
 
 base_url = 'https://kids-km3.shogakukan.co.jp'
 
@@ -57,7 +58,7 @@ if __name__ == '__main__':
     if not debug:
         options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
-    for book_id in book_ids:
+    for book_id in book_ids[download_books_from-1:]:
         images = []
         for page in range(1, 200):
             try:
