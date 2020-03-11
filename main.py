@@ -56,9 +56,8 @@ if __name__ == '__main__':
     options.add_argument('--window-size=500,750') # portrait
     if not debug:
         options.add_argument('--headless')
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(options=options)
     for book_id in book_ids:
-        book_id = book_ids[0]
         images = []
         for page in range(1, 200):
             try:
