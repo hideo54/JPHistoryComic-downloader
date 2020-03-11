@@ -61,7 +61,11 @@ if __name__ == '__main__':
         book_id = book_ids[0]
         images = []
         for page in range(1, 200):
-            new_images = get_page_image(driver, book_id, page)
+            try:
+                new_images = get_page_image(driver, book_id, page)
+            except binascii.Error:
+                print('Failed to load correct data. Trying again...')
+                new_images = get_page_image(driver, book_id, page)
             if new_images:
                 images.append(new_images)
             else:
